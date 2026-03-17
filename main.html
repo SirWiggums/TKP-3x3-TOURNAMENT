@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Trợ Giải Đấu 3x3</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .qr img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: orange;
+            color: black;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .btn-download {
+            background: #22c55e;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .item {
+            background: #334155;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .time {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        /* Top 3 Donate */
+        .top {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: black;
+        }
+
+        .top .time {
+            color: #452a09;
+        }
+
+        .loading {
+            text-align: center;
+            color: #94a3b8;
+            padding: 20px 0;
+            font-style: italic;
+        }
+
+        /* PHẦN THÔNG TIN LIÊN HỆ */
+        .contact-title {
+            color: #d9a05b;
+            /* Màu vàng cam giống ảnh */
+            font-size: 16px;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            /* Khoảng cách giữa sđt và fb */
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            /* Tự xuống dòng nếu màn hình quá nhỏ */
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .contact-icon {
+            width: 28px;
+            height: 28px;
+            background: #d9a05b;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h2>Tài Trợ Giải Đấu 3x3 Lễ hội CO SẦU</h2>
+        </div>
+
+        <div class="card qr">
+            <img src="QR.jpg" alt="Mã QR Chuyển Khoản">
+
+            <a href="QR.jpg" download="QR_Tai_Tro_3x3.jpg" style="text-decoration: none;">
+                <button type="button" class="btn-download">Tải ảnh QR</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <p style="margin-top: 0;"><b>Ngân hàng:</b> Vietcombank</p>
+            <p><b>STK:</b> 1062002101</p>
+            <p><b>Chủ TK:</b> HOANG QUANG MINH</p>
+
+            <button onclick="copy('1062002101')">Copy Số Tài Khoản</button>
+        </div>
+
+        <div class="card">
+            <h3 style="margin: 0 0 10px 0;">Danh sách Nhà Tài Trợ</h3>
+            <div id="list">
+                <div class="loading">Đang tải dữ liệu...</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="contact-title">THÔNG TIN LIÊN HỆ</h3>
+
+            <div class="contact-row">
+                <a href="https://www.facebook.com/bongrotrungkhanh" target="_blank" class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 320 512">
+                            <path fill="#ffffff"
+                                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
+                        </svg>
+                    </div>
+                    Bóng Rổ Trùng Khánh
+                </a>
+            </div>
+
+            <div class="contact-row">
+                <a href="tel:0357011896" class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 512 512">
+                            <path fill="#1e293b"
+                                d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                        </svg>
+                    </div>
+                    0357011896
+                </a>
+
+                <a href="https://www.facebook.com/nguyen.van.loc.780866" target="_blank" class="contact-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 320 512">
+                            <path fill="#ffffff"
+                                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
+                        </svg>
+                    </div>
+                    Nguyen Van Loc
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // BƯỚC QUAN TRỌNG: Dán link đuôi .csv của Google Sheets vào giữa 2 dấu ngoặc kép bên dưới
+        const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_ieqIJb4r9Ew9wDfyMocFxXm1UYg1-F9Cjfkpb9jCfXW2X9yau80mDuWyNyFjAwyolm7uKYg5e0tW/pub?gid=0&single=true&output=csv";
+
+        async function loadData() {
+            try {
+                let response = await fetch(SHEET_URL);
+                let text = await response.text();
+
+                // Cắt dữ liệu theo từng dòng, bỏ qua dòng 1 (tiêu đề)
+                let rows = text.split('\n').slice(1);
+                let data = [];
+
+                for (let row of rows) {
+                    if (!row.trim()) continue;
+                    let cols = row.split(','); // Tách cột bằng dấu phẩy
+
+                    if (cols.length >= 3) {
+                        data.push({
+                            name: cols[0].trim(),
+                            money: Number(cols[1].trim()),
+                            time: cols[2].trim()
+                        });
+                    }
+                }
+
+                render(data);
+            } catch (error) {
+                console.error("Lỗi:", error);
+                document.getElementById("list").innerHTML = "<div class='loading'>Chưa có dữ liệu hoặc đường dẫn bị lỗi.</div>";
+            }
+        }
+
+        function render(data) {
+            let html = "";
+
+            // Sắp xếp số tiền từ cao xuống thấp
+            data.sort((a, b) => b.money - a.money);
+
+            data.forEach((item, index) => {
+                let topClass = index < 3 ? "top" : ""; // Top 3 ông tô màu vàng
+
+                html += `
+                <div class="item ${topClass}">
+                    <div>
+                        <div style="font-weight: bold; font-size: 16px;">${item.name}</div>
+                        <div class="time">${item.time}</div>
+                    </div>
+                    <div style="font-weight: bold; font-size: 16px;">
+                        ${Number(item.money).toLocaleString('vi-VN')} VNĐ
+                    </div>
+                </div>`;
+            });
+
+            if (html === "") html = "<div class='loading'>Chưa có nhà tài trợ nào.</div>";
+            document.getElementById("list").innerHTML = html;
+        }
+
+        function copy(text) {
+            navigator.clipboard.writeText(text);
+            alert("Đã copy số tài khoản!");
+        }
+
+        // Chạy hàm lấy dữ liệu ngay khi vào web
+        loadData();
+    </script>
+
+</body>
+
+</html>
